@@ -24,9 +24,24 @@ The API will be available at `http://localhost:5000`
 
 ## Database
 
-The application uses SQLite by default. The database file will be created automatically at `metalmapper.db` in the backend directory.
+The application uses SQLite by default. The database file will be created automatically at `instance/metalmapper.db` when you first run the application.
 
-To seed sample bars:
+### Test Database Connection
+
+To verify the database connection and setup:
+```bash
+python test_db_connection.py
+```
+
+This script will:
+- Test database connection
+- Create all tables
+- Verify table schemas
+- Test basic CRUD operations
+
+### Seed Sample Data
+
+To seed 10 London bars:
 ```bash
 python seeds/seed_bars.py
 ```

@@ -7,17 +7,22 @@ class Suggestion(db.Model):
     __tablename__ = 'suggestions'
     
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False, index=True)
     name = db.Column(db.String(200), nullable=False)
     address = db.Column(db.String(500))
     city = db.Column(db.String(100))
     state = db.Column(db.String(50))
     zip_code = db.Column(db.String(20))
     description = db.Column(db.Text)
-    status = db.Column(db.String(20), default='pending')  # pending, approved, rejected
-    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    status = db.Column(db.String(20), default='pending', index=True)  # pending, approved, rejected
+    created_at = db.Column(db.DateTime, default=datetime.utcnow, index=True)
     reviewed_at = db.Column(db.DateTime)
     reviewed_by = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=True)
+    
+    # Check constraint for valid status values
+    __table_args__ = (
+        db.CheckConstraint("status IN ('pending', 'approved', 'rejected')", name='check_suggestion_status'),
+    )
     
     def to_dict(self):
         """Convert suggestion to dictionary."""
