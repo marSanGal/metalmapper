@@ -17,7 +17,8 @@ class User(db.Model):
     # Relationships
     checkins = db.relationship('Checkin', backref='user', lazy=True, cascade='all, delete-orphan')
     ratings = db.relationship('Rating', backref='user', lazy=True, cascade='all, delete-orphan')
-    suggestions = db.relationship('Suggestion', backref='user', lazy=True, cascade='all, delete-orphan')
+    suggestions = db.relationship('Suggestion', foreign_keys='Suggestion.user_id', backref='user', lazy=True, cascade='all, delete-orphan')
+    reviewed_suggestions = db.relationship('Suggestion', foreign_keys='Suggestion.reviewed_by', backref='reviewer', lazy=True)
     
     def set_password(self, password):
         """Hash and set password."""
