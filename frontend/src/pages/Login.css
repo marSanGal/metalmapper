@@ -1,0 +1,122 @@
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: calc(100vh - 56px);
+  padding: 2rem 0;
+}
+
+.login-container {
+  background: white;
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  margin: 0 1rem;
+}
+
+.login-container h1 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.875rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  -webkit-appearance: none;
+  appearance: none;
+  min-height: 48px;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #ff6b6b;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 0.875rem;
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  min-height: 48px;
+  transition: background-color 0.2s, transform 0.1s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.login-container button:active:not(:disabled) {
+  background-color: #ff5252;
+  transform: scale(0.98);
+}
+
+@media (min-width: 768px) {
+  .login-container button:hover:not(:disabled) {
+    background-color: #ff5252;
+  }
+}
+
+.login-container button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error-message {
+  background-color: #fee;
+  color: #c33;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.register-link {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.register-link a {
+  color: #ff6b6b;
+  text-decoration: none;
+  font-weight: 500;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.register-link a:active {
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .register-link a:hover {
+    text-decoration: underline;
+  }
+}
+

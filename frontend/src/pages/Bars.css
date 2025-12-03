@@ -1,0 +1,36 @@
+.bars-page {
+  padding: 0;
+}
+
+.bars-page h1 {
+  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.bars-grid {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+}
+
+.error {
+  color: #c33;
+  padding: 1rem;
+  background-color: #fee;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+@media (min-width: 768px) {
+  .bars-page {
+    padding: 0.5rem 0;
+  }
+
+  .bars-page h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
